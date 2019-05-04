@@ -1,0 +1,4 @@
+Authtype Basic
+AuthName "My Protected Area"
+AuthUserFile F:\wamp64\www/.htpasswd
+Require valid-user
