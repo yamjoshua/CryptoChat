@@ -4,8 +4,17 @@
 <head>
   <title>CryptoChat</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
-</head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
+</head>
+<style>
+.talktext{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+}
+
+</style>
 <body style="overflow-y:hidden;" class="has-navbar-fixed-bottom">
 
   <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
@@ -53,13 +62,6 @@
           </a>
         </div>
       </div>
-      <div>
-        <!-- <script>
-          var key = "{{stringkey}}";
-          window.alert('This is your key: ' + key);
-        </script> -->
-      </div>
-
     </div>
   </div>
 
@@ -294,7 +296,7 @@
           // let message = bin2String(bmessage);
           let message_template = `<article class="media">
                                   <div class="media-content">
-                                    <div class="content">
+                                    <div class="talktext">
                                       <p>
                                         <strong>${name}</strong>
                                         <br> ${message}
@@ -303,6 +305,7 @@
                                   </div>
                                 </article>`;                  
           $('#content').append(message_template);
+          window.scrollTo(0,document.body.scrollHeight);
         });
       
     });
